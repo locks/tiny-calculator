@@ -1,0 +1,30 @@
+<form class="calculator" {{on 'submit' this.calculateResult}}>
+    <label for="display"></label>
+    <textfield name="display" id="display" class="display">{{this.display}}</textfield>
+
+    <div class="keypad">
+        <button type="button" class="meta" {{on 'click' this.resetResult}}>AC</button>
+        <button type="button" class="meta">+/-</button>
+        <button type="button" class="meta">%</button>
+        <button type="button" class="operations" {{on 'click' this.operationDivision}}>&divide;</button>
+
+        <button type="button" class="digit" {{on 'click' (fn this.addDigit 7)}}>7</button>
+        <button type="button" class="digit" {{on 'click' (fn this.addDigit 8)}}>8</button>
+        <button type="button" class="digit" {{on 'click' (fn this.addDigit 9)}}>9</button>
+        <button type="button" class="operations" {{on 'click' this.operationMultiplication}}>&times;</button>
+
+        <button type="button" class="digit" {{on 'click' (fn this.addDigit 4)}}>4</button>
+        <button type="button" class="digit" {{on 'click' (fn this.addDigit 5)}}>5</button>
+        <button type="button" class="digit" {{on 'click' (fn this.addDigit 6)}}>6</button>
+        <button type="button" class="operations" {{on 'click' this.operationSubtraction}}>&minus;</button>
+
+        <button type="button" class="digit" {{on 'click' (fn this.addDigit 1)}}>1</button>
+        <button type="button" class="digit" {{on 'click' (fn this.addDigit 2)}}>2</button>
+        <button type="button" class="digit" {{on 'click' (fn this.addDigit 3)}}>3</button>
+        <button type="button" class="operations" {{on 'click' this.operationAddition}}>&plus;</button>
+
+        <button type="button" class="digit keypad-zero" {{on 'click' (fn this.addDigit 0)}}>0</button>
+        <button type="button" class="digit">,</button>
+        <button type="submit" class="operations">=</button>
+    </div>
+</form>
